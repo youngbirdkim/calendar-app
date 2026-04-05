@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -37,43 +38,50 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* 헤더 */
+  /* 헤더 - 최소화 */
   .header {
-    padding: 16px 20px 14px;
+    padding: 7px 14px 6px;
     background: var(--surface);
     border-bottom: 1px solid var(--border);
-    display: flex; align-items: center; gap: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     flex-shrink: 0;
   }
   .header-icon {
-    width: 40px; height: 40px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px; flex-shrink: 0;
+    font-size: 16px;
+    line-height: 1;
+    flex-shrink: 0;
   }
-  .header-info h1 {
-    font-size: 16px; font-weight: 700;
-    letter-spacing: -0.3px; color: var(--text);
+  .header-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.2px;
   }
-  .header-info p { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
   .status-dot {
-    width: 8px; height: 8px;
-    background: #22c55e; border-radius: 50%;
-    margin-left: auto; flex-shrink: 0;
+    width: 6px; height: 6px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-left: auto;
+    flex-shrink: 0;
   }
 
   /* 대화창 */
   .chat-area {
-    flex: 1; overflow-y: auto;
-    padding: 20px 16px 12px;
-    display: flex; flex-direction: column; gap: 20px;
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px 12px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
     scroll-behavior: smooth;
   }
   .chat-area::-webkit-scrollbar { width: 0; }
 
   .message {
-    display: flex; flex-direction: column;
+    display: flex;
+    flex-direction: column;
     max-width: 82%;
     animation: fadeUp .2s ease;
   }
@@ -82,11 +90,11 @@
   .message.bot  { align-self: flex-start; align-items: flex-start; }
 
   .bubble {
-    padding: 14px 18px;
-    border-radius: 20px;
-    font-size: 16px;
+    padding: 10px 14px;
+    border-radius: 18px;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 1.75;
+    line-height: 1.65;
     white-space: pre-wrap;
     word-break: break-word;
     letter-spacing: -0.2px;
@@ -94,32 +102,37 @@
   .message.user .bubble {
     background: var(--user-bubble);
     color: #ffffff;
-    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 4px;
   }
   .message.bot .bubble {
     background: var(--bot-bubble);
     border: 1px solid var(--border);
     color: var(--text);
-    border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 4px;
     box-shadow: 0 1px 4px var(--shadow);
   }
   .msg-time {
-    font-size: 16px; color: var(--text-muted);
-    margin-top: 5px;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 3px;
   }
 
   /* 로딩 */
   .loading-bubble {
     background: var(--bot-bubble);
     border: 1px solid var(--border);
-    border-radius: 20px; border-bottom-left-radius: 5px;
-    padding: 16px 20px;
-    display: flex; gap: 7px; align-items: center;
+    border-radius: 18px;
+    border-bottom-left-radius: 4px;
+    padding: 12px 16px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
     box-shadow: 0 1px 4px var(--shadow);
   }
   .loading-dot {
-    width: 9px; height: 9px;
-    background: var(--text-muted); border-radius: 50%;
+    width: 7px; height: 7px;
+    background: var(--text-muted);
+    border-radius: 50%;
     animation: bounce 1.2s infinite;
   }
   .loading-dot:nth-child(2){animation-delay:.2s}
@@ -132,53 +145,61 @@
     align-self: flex-end;
     background: rgba(217,119,87,.08);
     border: 1px solid rgba(217,119,87,.3);
-    border-radius: 20px; border-bottom-right-radius: 5px;
-    padding: 13px 17px;
-    font-size: 23px; color: var(--accent);
+    border-radius: 18px;
+    border-bottom-right-radius: 4px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--accent);
     max-width: 82%;
   }
-  .listening-indicator.active { display: flex; align-items: center; gap: 11px; }
-  .listening-wave { display: flex; gap: 4px; align-items: center; }
+  .listening-indicator.active { display: flex; align-items: center; gap: 9px; }
+  .listening-wave { display: flex; gap: 3px; align-items: center; }
   .wave-bar { width: 3px; background: var(--accent); border-radius: 2px; animation: wave .8s infinite ease-in-out; }
-  .wave-bar:nth-child(1){height:8px;animation-delay:0s}
-  .wave-bar:nth-child(2){height:18px;animation-delay:.1s}
-  .wave-bar:nth-child(3){height:12px;animation-delay:.2s}
-  .wave-bar:nth-child(4){height:20px;animation-delay:.15s}
-  .wave-bar:nth-child(5){height:9px;animation-delay:.05s}
+  .wave-bar:nth-child(1){height:6px;animation-delay:0s}
+  .wave-bar:nth-child(2){height:14px;animation-delay:.1s}
+  .wave-bar:nth-child(3){height:9px;animation-delay:.2s}
+  .wave-bar:nth-child(4){height:16px;animation-delay:.15s}
+  .wave-bar:nth-child(5){height:7px;animation-delay:.05s}
   @keyframes wave{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1)}}
 
   /* 빈 상태 */
   .empty-state {
     flex: 1;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 14px; padding: 24px; text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    text-align: center;
   }
-  .empty-icon { font-size: 25px; opacity: .25; }
-  .empty-state p { font-size: 16px; line-height: 1.75; color: var(--text-muted); }
+  .empty-icon { font-size: 20px; opacity: .25; }
+  .empty-state p { font-size: 14px; line-height: 1.7; color: var(--text-muted); }
   .empty-state strong { color: var(--text); font-weight: 500; }
-  .empty-hint { font-size: 14px !important; margin-top: 4px; opacity: .7; }
+  .empty-hint { font-size: 12px !important; margin-top: 2px; opacity: .7; }
 
-  /* 입력 영역 */
+  /* 입력 영역 - 60% 크기로 압축 */
   .input-area {
-    padding: 12px 14px 32px;
+    padding: 7px 10px 18px;
     background: var(--surface);
     border-top: 1px solid var(--border);
     flex-shrink: 0;
   }
 
-  /* 빠른 버튼 2×3 */
+  /* 빠른 버튼 3×3 - 컴팩트 */
   .quick-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin-bottom: 12px;
+    gap: 5px;
+    margin-bottom: 7px;
   }
   .quick-btn {
-    display: flex; align-items: center; justify-content: center;
-    gap: 6px;
-    height: 37px;
-    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: 28px;
+    border-radius: 10px;
     border: 1px solid var(--border);
     background: var(--surface2);
     color: var(--text);
@@ -192,102 +213,136 @@
     color: var(--accent);
     transform: scale(.96);
   }
-  .q-emoji { font-size: 19px; line-height: 1; flex-shrink: 0; }
-  .q-text  { font-size: 15px; font-weight: 500; color: inherit; white-space: nowrap; }
+  .q-emoji { font-size: 13px; line-height: 1; flex-shrink: 0; }
+  .q-text  { font-size: 12px; font-weight: 500; color: inherit; white-space: nowrap; }
 
   /* 텍스트 입력 */
-  .input-row { display: flex; gap: 10px; align-items: flex-end; }
+  .input-row { display: flex; gap: 7px; align-items: flex-end; }
   .text-input-wrap {
     flex: 1;
     background: var(--surface2);
     border: 1px solid var(--border);
-    border-radius: 18px;
-    display: flex; align-items: flex-end;
-    padding: 4px 6px 4px 16px;
+    border-radius: 14px;
+    display: flex;
+    align-items: flex-end;
+    padding: 2px 4px 2px 12px;
     transition: border-color .2s;
   }
   .text-input-wrap:focus-within { border-color: var(--accent); }
   textarea {
-    flex: 1; background: none; border: none; outline: none;
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
     color: var(--text);
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 15px; resize: none;
-    padding: 12px 0; max-height: 110px; line-height: 1.5;
+    font-size: 13px;
+    resize: none;
+    padding: 7px 0;
+    max-height: 72px;
+    line-height: 1.4;
   }
   textarea::placeholder { color: var(--text-muted); }
   .send-btn {
-    width: 48px; height: 48px;
-    border-radius: 50%; border: none;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    border: none;
     background: var(--user-bubble);
-    color: white; font-size: 18px; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; transition: transform .1s; margin-bottom: 2px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform .1s;
+    margin-bottom: 1px;
   }
   .send-btn:active { transform: scale(.92); }
 
-  /* 마이크 128px */
+  /* 마이크 - 컴팩트 */
   .mic-wrap {
-    display: flex; flex-direction: column;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-top: 12px; gap: 7px;
+    margin-top: 7px;
+    gap: 4px;
   }
   .mic-btn {
-    width: 57px; height: 57px;
-    border-radius: 50%; border: none;
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    border: none;
     background: var(--user-bubble);
-    color: white; font-size: 24px; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all .2s;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
   }
   .mic-btn:active { transform: scale(.92); }
   .mic-btn.listening {
     background: linear-gradient(135deg, var(--accent), var(--accent2));
-    box-shadow: 0 4px 20px rgba(217,119,87,.35);
+    box-shadow: 0 3px 14px rgba(217,119,87,.35);
     animation: mic-pulse 1.5s infinite;
   }
   @keyframes mic-pulse {
-    0%,100%{box-shadow:0 4px 20px rgba(217,119,87,.35)}
-    50%{box-shadow:0 4px 32px rgba(217,119,87,.15)}
+    0%,100%{box-shadow:0 3px 14px rgba(217,119,87,.35)}
+    50%{box-shadow:0 3px 22px rgba(217,119,87,.15)}
   }
-  .mic-label { font-size: 13px; color: var(--text-muted); font-weight: 400; }
+  .mic-label { font-size: 11px; color: var(--text-muted); font-weight: 400; }
 
   /* TTS */
   .tts-bar {
-    display: none; align-items: center; justify-content: center;
-    gap: 10px; padding: 7px 0 0;
-    font-size: 20px; color: var(--text-muted);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 5px 0 0;
+    font-size: 12px;
+    color: var(--text-muted);
   }
   .tts-bar.active { display: flex; }
   .stop-btn {
-    background: none; border: 1px solid var(--border);
-    border-radius: 9px; color: var(--text-muted);
-    font-size: 20px; padding: 7px 16px; cursor: pointer;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    color: var(--text-muted);
+    font-size: 12px;
+    padding: 4px 10px;
+    cursor: pointer;
     font-family: 'Noto Sans KR', sans-serif;
   }
 
   /* 토스트 */
   .toast {
-    position: fixed; top: 78px;
-    left: 50%; transform: translateX(-50%) translateY(-10px);
+    position: fixed;
+    top: 52px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
     background: #fff0ed;
     border: 1px solid #ffb8a0;
-    color: #c4623e; border-radius: 12px;
-    padding: 10px 20px; font-size: 20px;
-    opacity: 0; transition: all .3s;
-    pointer-events: none; white-space: nowrap; z-index: 200;
+    color: #c4623e;
+    border-radius: 10px;
+    padding: 7px 16px;
+    font-size: 13px;
+    opacity: 0;
+    transition: all .3s;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 200;
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 </style>
 </head>
 <body>
 
+<!-- 헤더: 최소화 -->
 <div class="header">
-  <div class="header-icon">📅</div>
-  <div class="header-info">
-    <h1>캘린더 어시스턴트</h1>
-    <p>TCC STEEL · 음성/텍스트 지원</p>
-  </div>
+  <span class="header-icon">📅</span>
+  <span class="header-title">캘린더 어시스턴트</span>
   <div class="status-dot"></div>
 </div>
 
@@ -541,7 +596,7 @@ function escapeHtml(text) {
 }
 function autoResize(el) {
   el.style.height = 'auto';
-  el.style.height = Math.min(el.scrollHeight, 110) + 'px';
+  el.style.height = Math.min(el.scrollHeight, 72) + 'px';
 }
 function showToast(msg) {
   const toast = document.getElementById('toast');
